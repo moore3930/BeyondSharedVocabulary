@@ -1,7 +1,7 @@
 # Beyond Shared Vocabulary
 Here is the repo for our EMNLP23 paper "Beyond Shared Vocabulary: Increasing Representational Word Similarities across Languages for Multilingual Machine Translation".
 
-See [preprint](https://arxiv.org/pdf/2305.14189.pdf)
+See [Preprint](https://arxiv.org/pdf/2305.14189.pdf)
 
 See [Poster](materials/EMNLP23%20-%20Poster.pdf)
 
