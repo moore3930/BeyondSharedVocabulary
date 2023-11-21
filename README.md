@@ -1,6 +1,7 @@
 # Beyond Shared Vocabulary
 Here is the repo for our EMNLP23 paper "Beyond Shared Vocabulary: Increasing Representational Word Similarities across Languages for Multilingual Machine Translation", see [preprint](https://arxiv.org/pdf/2305.14189.pdf)
 
+The full code and data are releasing.
 
 ## Introduction
 Using a shared vocabulary is common practice in Multilingual Systems, like Multilingual Translation, mBERT, or nowadays LLM. In addition to its simple design, shared tokens play an important role in positive knowledge transfer, assuming that shared tokens refer to similar meanings across languages. However, when word overlap is small, especially due to different writing systems, transfer is inhibited. 
