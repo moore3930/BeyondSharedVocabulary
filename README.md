@@ -5,7 +5,7 @@ See [Preprint](https://arxiv.org/pdf/2305.14189.pdf)
 
 See [Poster](materials/EMNLP23%20-%20Poster.pdf)
 
-See [Run Example](#quick_start)
+Training Code is released. See [Run Example](#quick_start)
 
 ## Introduction
 ![](materials/main.jpg)
