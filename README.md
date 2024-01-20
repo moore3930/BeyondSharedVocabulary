@@ -54,5 +54,6 @@ sbatch EC30_graphmerge_1hop.sh
 
 
 ### Graph Building
-On releasing
+Under organization.
+
 
