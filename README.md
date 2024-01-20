@@ -23,9 +23,7 @@ In this paper, we encourage word-level knowledge transfer via graph networks, wh
 
 1) For the experiments on the IWSLT-14 dataset: We provide the script in [iwslt14-30k-graphmerge-hop1.sh](https://github.com/research-anonymous/beyond_shared_vocabulary/blob/main/iwslt14-30k-graphmerge-hop1.sh).
 
-2) For the experiments on the WMT30 dataset: We provide the script in [EC30_128K_graphmerge.sh](https://github.com/research-anonymous/beyond_shared_vocabulary/blob/main/EC30_128K_graphmerge.sh). Due to the big scale, we will put the original data and the corresponding data_bin in another place and it will be released soon.
-
-3) We will also provide the graph-building script to the community for better practice. Now, we provide the pre-built graph in [data_bin](https://github.com/research-anonymous/beyond_shared_vocabulary/tree/main/iwslt14-30k/alignment_matrix.npz)
+2) For the experiments on the WMT30 dataset: We provide the script in [EC30_graphmerge.sh](https://github.com/moore3930/BeyondSharedVocabulary/blob/main/train_scripts/EC30/EC30_graphmerge_1hop.sh). 
 
 <span id="data_model"></span>
 ### Data
