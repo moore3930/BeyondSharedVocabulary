@@ -3,7 +3,6 @@
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:4
 #SBATCH --ntasks=1
-##SBATCH --nodelist=ilps-cn115
 #SBATCH --exclude=ilps-cn111,ilps-cn101,ilps-cn102,ilps-cn103,ilps-cn104,ilps-cn105,ilps-cn106,ilps-cn107,ilps-cn108,ilps-cn109,ilps-cn110,ilps-cn112,ilps-cn113,ilps-cn114,ilps-cn115
 #SBATCH --cpus-per-task=11
 #SBATCH --mem=64G
@@ -16,7 +15,6 @@
 #SBATCH -o /home/dwu/workplace/logs/beyond/out.EC30_128K_graphmerge.o
 #SBATCH -e /home/dwu/workplace/logs/beyond/out.EC30_128K_graphmerge.e
 
-
 export PATH=/home/diwu/anaconda3/bin:$PATH
 source activate py38cuda11
 export CUDA_HOME="/usr/local/cuda-11.0"
@@ -26,6 +24,9 @@ export LD_LIBRARY_PATH="/home/diwu/cudalibs:/usr/lib64/nvidia:${CUDA_HOME}/lib64
 
 DATA_DIR=/ivi/ilps/personal/dwu/release/EC30_dataset
 CHECKPOINT_DIR=/ivi/ilps/personal/dwu/checkpoints/beyond/release/EC30-128K-graphmerge
+
+GRAPHMERGE_DIR=/home/dwu/workplace/fairseq/graphsage_v3_sparse
+GRAPH_PATH=/ivi/ilps/personal/dwu/release/EC30_dataset/alignment_matrix.npz
 
 fairseq-train ${DATA_DIR}/fairseq-data-bin-sharded/shard0:${DATA_DIR}/fairseq-data-bin-sharded/shard1:${DATA_DIR}/fairseq-data-bin-sharded/shard2:${DATA_DIR}/fairseq-data-bin-sharded/shard3:${DATA_DIR}/fairseq-data-bin-sharded/shard4 \
     --langs en,de,nl,sv,da,af,lb,fr,es,it,pt,ro,oc,ru,cs,pl,bg,uk,sr,hi,bn,kn,mr,sd,gu,ar,he,ha,mt,ti,am \
@@ -48,8 +49,8 @@ fairseq-train ${DATA_DIR}/fairseq-data-bin-sharded/shard0:${DATA_DIR}/fairseq-da
     --save-interval-updates 2000 --keep-interval-updates 5 --no-epoch-checkpoints --log-interval 20 \
     --distributed-world-size 4 --distributed-num-procs 44 --ddp-comm-hook fp16 \
     --skip-invalid-size-inputs-valid-test \
-    --user-dir /home/dwu/workplace/fairseq/graphsage_v3_sparse \
-    --graph-path /ivi/ilps/personal/dwu/release/EC30_dataset/alignment_matrix.npz \
+    --user-dir ${GRAPHMERGE_DIR} \
+    --graph-path ${GRAPH_PATH} \
     --tie-graph-proj \
     --hop-num 1 \
     --fp16
@@ -64,8 +65,7 @@ for i in "${!PAIRS[@]}"; do
         --task translation_multi_simple_epoch \
         --langs en,de,nl,sv,da,af,lb,fr,es,it,pt,ro,oc,ru,cs,pl,bg,uk,sr,hi,bn,kn,mr,sd,gu,ar,he,ha,mt,ti,am \
         --lang-pairs $PAIR \
-        --source-lang $SRC \
-        --target-lang $TGT \
+        --source-lang $TGT \
         --sacrebleu \
         --remove-bpe 'sentencepiece' \
         --arch transformer_vaswani_wmt_en_de_big_id \
@@ -80,8 +80,8 @@ for i in "${!PAIRS[@]}"; do
         --beam 5 \
         --seed 222 \
         --results-path ${CHECKPOINT_DIR}/${SRC}-${TGT} \
-        --user-dir /home/dwu/workplace/fairseq/graphsage_v3_sparse \
-        --graph-path /ivi/ilps/personal/dwu/release/EC30_dataset/alignment_matrix.npz \
+        --user-dir ${GRAPHMERGE_DIR} \
+        --graph-path ${GRAPH_PATH} \
         --tie-graph-proj \
         --hop-num 1 \
         --fp16
