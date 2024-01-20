@@ -55,7 +55,7 @@ In this paper, we encourage word-level knowledge transfer via graph networks, wh
 ## Quick Start
 ### Training
 ```angular2html
-# install fairseq, graphsage_v3_sparse is model directory.
+# install fairseq, fairseq\graphsage_v3_sparse is the model directory.
 git clone git@github.com:moore3930/BeyondSharedVocabulary.git
 cd BeyondSharedVocabulary/fairseq
 pip install --editable ./
