@@ -42,11 +42,14 @@ Also, you can use our prebuilt dataset directly: [EC30_full](https://drive.googl
 
 ```angular2html
 # install fairseq, fairseq\graphsage_v3_sparse is the model directory.
+
 git clone git@github.com:moore3930/BeyondSharedVocabulary.git
 cd BeyondSharedVocabulary/fairseq
 pip install --editable ./
 
-# Run directly if you are using slurm systems. Otherwise, please refer to the code within "EC30_graphmerge_1hop.sh"
+# Run directly if you are using slurm systems. 
+# Otherwise, please refer to the code within "EC30_graphmerge_1hop.sh"
+
 cd ../train_scripts/EC30
 sbatch EC30_graphmerge_1hop.sh
 
