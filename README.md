@@ -5,7 +5,7 @@ See [Preprint](https://arxiv.org/pdf/2305.14189.pdf)
 
 See [Poster](materials/EMNLP23%20-%20Poster.pdf)
 
-The full code and data are releasing.
+See [Run Example](#quick_start)
 
 ## Introduction
 ![](materials/main.jpg)
@@ -41,15 +41,31 @@ In this paper, we encourage word-level knowledge transfer via graph networks, wh
 
 [//]: # ()
 [//]: # ()
-[//]: # (## Experiments)
 
-[//]: # (1&#41; For the experiments on the IWSLT-14 dataset: We provide the script in [iwslt14-30k-graphmerge-hop1.sh]&#40;https://github.com/research-anonymous/beyond_shared_vocabulary/blob/main/iwslt14-30k-graphmerge-hop1.sh&#41;.)
+## Experiments
 
-[//]: # (2&#41; For the experiments on the WMT30 dataset: We provide the script in [EC30_128K_graphmerge.sh]&#40;https://github.com/research-anonymous/beyond_shared_vocabulary/blob/main/EC30_128K_graphmerge.sh&#41;. Due to the big scale, we will put the original data and the corresponding data_bin in another place and it will be released soon.)
+1) For the experiments on the IWSLT-14 dataset: We provide the script in [iwslt14-30k-graphmerge-hop1.sh](https://github.com/research-anonymous/beyond_shared_vocabulary/blob/main/iwslt14-30k-graphmerge-hop1.sh).
 
-[//]: # (3&#41; We will also provide the graph-building script to the community for better practice. Now, we provide the pre-built graph in [data_bin]&#40;https://github.com/research-anonymous/beyond_shared_vocabulary/tree/main/iwslt14-30k/alignment_matrix.npz&#41;)
+2) For the experiments on the WMT30 dataset: We provide the script in [EC30_128K_graphmerge.sh](https://github.com/research-anonymous/beyond_shared_vocabulary/blob/main/EC30_128K_graphmerge.sh). Due to the big scale, we will put the original data and the corresponding data_bin in another place and it will be released soon.
 
-[//]: # ()
-[//]: # (## Others)
+3) We will also provide the graph-building script to the community for better practice. Now, we provide the pre-built graph in [data_bin](https://github.com/research-anonymous/beyond_shared_vocabulary/tree/main/iwslt14-30k/alignment_matrix.npz)
 
-[//]: # (The current codebase is fine to show the main experiments. A more complete README.md file is on editing. )
+
+<span id="quick_start"></span>
+## Quick Start
+### Training
+```angular2html
+# install fairseq, graphsage_v3_sparse is model directory.
+git clone git@github.com:moore3930/BeyondSharedVocabulary.git
+cd BeyondSharedVocabulary/fairseq
+pip install --editable ./
+
+# Run directly if you are using slurm systems. Otherwise, please refer to the code within "EC30_graphmerge_1hop.sh"
+cd ../train_scripts/EC30
+sbatch EC30_graphmerge_1hop.sh
+
+```
+
+
+### Graph Building
+
