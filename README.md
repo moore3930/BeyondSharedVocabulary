@@ -6,6 +6,7 @@ See [Preprint](https://arxiv.org/pdf/2305.14189.pdf)
 See [Poster](materials/EMNLP23%20-%20Poster.pdf)
 
 Training Code is released. See [Run Example](#quick_start)
+Data and Model is released. See [Data & Model](#data_model)
 
 ## Introduction
 ![](materials/main.jpg)
@@ -49,6 +50,13 @@ In this paper, we encourage word-level knowledge transfer via graph networks, wh
 2) For the experiments on the WMT30 dataset: We provide the script in [EC30_128K_graphmerge.sh](https://github.com/research-anonymous/beyond_shared_vocabulary/blob/main/EC30_128K_graphmerge.sh). Due to the big scale, we will put the original data and the corresponding data_bin in another place and it will be released soon.
 
 3) We will also provide the graph-building script to the community for better practice. Now, we provide the pre-built graph in [data_bin](https://github.com/research-anonymous/beyond_shared_vocabulary/tree/main/iwslt14-30k/alignment_matrix.npz)
+
+### Data
+[EC30_raw](https://drive.google.com/file/d/1HgO278Pxt_B_rS3VISt9jrr2MqWKWss0/view?usp=sharing): Raw data of EC30, which is already tokenized.
+
+[EC30_full](https://drive.google.com/file/d/1e4VxVE_7WSjczPT5SFPMJRIuvmR5wstR/view?usp=sharing): Preprocess data of EC30, including BPE, fairseq binarization, and graph building.
+
+### Model
 
 
 <span id="quick_start"></span>
