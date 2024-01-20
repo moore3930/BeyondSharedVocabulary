@@ -56,4 +56,26 @@ sbatch EC30_graphmerge_1hop.sh
 ### Graph Building
 Under organization.
 
+# Citation
+If this work is helpful, please kindly cite as:
+```angular2html
+@inproceedings{wu-monz-2023-beyond,
+    title = "Beyond Shared Vocabulary: Increasing Representational Word Similarities across Languages for Multilingual Machine Translation",
+    author = "Wu, Di  and
+      Monz, Christof",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.605",
+    doi = "10.18653/v1/2023.emnlp-main.605",
+    pages = "9749--9764",
+    abstract = "Using a shared vocabulary is common practice in Multilingual Neural Machine Translation (MNMT). In addition to its simple design, shared tokens play an important role in positive knowledge transfer, which manifests naturally when the shared tokens refer to similar meanings across languages. However, when words overlap is small, e.g., using different writing systems, transfer is inhibited. In this paper, we propose a re-parameterized method for building embeddings to alleviate this problem. More specifically, we define word-level information transfer pathways via word equivalence classes and rely on graph networks to fuse word embeddings across languages. Our experiments demonstrate the advantages of our approach: 1) the semantics of embeddings are better aligned across languages, 2) our method achieves evident BLEU improvements on high- and low-resource MNMT, and 3) only less than 1.0{\%} additional trainable parameters are required with a limited increase in computational costs, while the inference time is identical to baselines.",
+}
+```
+
 
