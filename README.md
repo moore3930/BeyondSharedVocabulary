@@ -36,9 +36,9 @@ Multiple advantages of our approach are demonstrated:
 <span id="quick_start"></span>
 ## Quick Start
 ### Training
-Before training, Please download the dataset and run the graph building scripts.
+Before training, Please download the dataset, such as [EC30_raw](https://drive.google.com/file/d/1HgO278Pxt_B_rS3VISt9jrr2MqWKWss0/view?usp=sharing), and run the graph building scripts.
 
-You can also use our prebuilt dataset [EC30_full](https://drive.google.com/file/d/1e4VxVE_7WSjczPT5SFPMJRIuvmR5wstR/view?usp=sharing).
+Also, you can use our prebuilt dataset directly: [EC30_full](https://drive.google.com/file/d/1e4VxVE_7WSjczPT5SFPMJRIuvmR5wstR/view?usp=sharing).
 
 ```angular2html
 # install fairseq, fairseq\graphsage_v3_sparse is the model directory.
