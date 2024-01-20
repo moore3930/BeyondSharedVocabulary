@@ -6,6 +6,7 @@ See [Preprint](https://arxiv.org/pdf/2305.14189.pdf)
 See [Poster](materials/EMNLP23%20-%20Poster.pdf)
 
 Training Code is released. See [Run Example](#quick_start)
+
 Data and Model is released. See [Data & Model](#data_model)
 
 ## Introduction
@@ -18,31 +19,6 @@ In this paper, we encourage word-level knowledge transfer via graph networks, wh
 2) Better MMT performance: up to an average of 2.3 BLEU gain is achieved for high- and low-resource MMT.
 3) Efficiency: Less than 1.0% additional trainable parameters are required with a limited increase in computational costs, while inference time remains identical to the baseline.
 
-[//]: # (## Requirements)
-
-[//]: # (​```)
-
-[//]: # (git clone git@github.com:research-anonymous/beyond_shared_vocabulary.git)
-
-[//]: # (​```)
-
-[//]: # ()
-[//]: # (​```)
-
-[//]: # (cd beyond_shared_vocabulary/fairseq)
-
-[//]: # (​```)
-
-[//]: # ()
-[//]: # (​```)
-
-[//]: # (pip install --editable ./)
-
-[//]: # (​```)
-
-[//]: # ()
-[//]: # ()
-
 ## Experiments
 
 1) For the experiments on the IWSLT-14 dataset: We provide the script in [iwslt14-30k-graphmerge-hop1.sh](https://github.com/research-anonymous/beyond_shared_vocabulary/blob/main/iwslt14-30k-graphmerge-hop1.sh).
@@ -51,6 +27,7 @@ In this paper, we encourage word-level knowledge transfer via graph networks, wh
 
 3) We will also provide the graph-building script to the community for better practice. Now, we provide the pre-built graph in [data_bin](https://github.com/research-anonymous/beyond_shared_vocabulary/tree/main/iwslt14-30k/alignment_matrix.npz)
 
+<span id="data_model"></span>
 ### Data
 [EC30_raw](https://drive.google.com/file/d/1HgO278Pxt_B_rS3VISt9jrr2MqWKWss0/view?usp=sharing): Raw data of EC30, which is already tokenized.
 
